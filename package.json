@@ -1,0 +1,53 @@
+{
+  "name": "react-pomodoro",
+  "version": "1.0.0",
+  "description": "- Type of challenge: **learning** - Repository : **`react-pomodoro`** - Deadline : **18/05/2020 9:00 pm** - Team : **solo**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel scr/index.html",
+    "build": "parcel bluid scr/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnaudmagonette/react-pomodoro.git"
+  },
+  "keywords": [],
+  "author": "Arnaud Magonette",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arnaudmagonette/react-pomodoro/issues"
+  },
+  "homepage": "https://github.com/arnaudmagonette/react-pomodoro#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "@becode/eslint-config": "^0.9.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.0.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-unicorn": "^19.0.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.2",
+    "prettier": "^2.0.5"
+  },
+  "lint-staged": {
+    "*.json": [
+      "npx prettier --write"
+    ],
+    "*.js": [
+      "npx eslint --fix --cache"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
