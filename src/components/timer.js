@@ -74,25 +74,49 @@ class Timer extends React.Component {
 
     render() {
         return (
-            <section>
-                <session>
-                    <h4>{this.state.isSession ? "Session" : "Break"}</h4>
-                    <span>{this.props.timerMinute}</span>
-                    <span>{":"}</span>
-                    <span>
-                        {this.state.timerSecond < 10
-                            ? `0${this.state.timerSecond}`
-                            : this.state.timerSecond}
-                    </span>
+            <section className={"d-flex flex-column align-items-center mb-5"}>
+                <session
+                    className={"d-flex flex-column align-items-center mb-3"}>
+                    <h2>{this.state.isSession ? "Session" : "Break"}</h2>
+                    <div className={"display-1"}>
+                        <span>{this.props.timerMinute}</span>
+                        <span>{":"}</span>
+                        <span>
+                            {this.state.timerSecond < 10
+                                ? `0${this.state.timerSecond}`
+                                : this.state.timerSecond}
+                        </span>
+                    </div>
                 </session>
-                <section>
-                    <button type={"button"} onClick={this.handlePlayTimer}>
+                <section className={"d-flex flex-row btn-group w-25"}>
+                    <button
+                        className={
+                            !this.props.isPlay
+                                ? "btn btn-primary"
+                                : "btn btn-primary d-none"
+                        }
+                        type={"button"}
+                        onClick={this.handlePlayTimer}>
                         {"Play"}
                     </button>
-                    <button type={"button"} onClick={this.handleStopTimer}>
+                    <button
+                        className={
+                            this.props.isPlay
+                                ? "btn btn-danger"
+                                : "btn btn-danger d-none"
+                        }
+                        type={"button"}
+                        onClick={this.handleStopTimer}>
                         {"Stop"}
                     </button>
-                    <button type={"button"} onClick={this.handleResetTimer}>
+                    <button
+                        className={
+                            !this.props.isPlay
+                                ? "btn btn-danger"
+                                : "btn btn-danger d-none"
+                        }
+                        type={"button"}
+                        onClick={this.handleResetTimer}>
                         {"Refresh"}
                     </button>
                 </section>

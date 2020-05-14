@@ -1,5 +1,5 @@
 import React from "react";
-import BreakInterval from "./breack-interval";
+import BreakInterval from "./break-interval";
 import SessionLength from "./session-length";
 import Timer from "./timer";
 
@@ -86,28 +86,36 @@ class App extends React.Component {
 
     render() {
         return (
-            <main>
-                <h2>{"Pomodoro Clock"}</h2>
-                <BreakInterval
-                    breakInterval={this.state.breakLength}
-                    increaseBreak={this.onIncreaseBreakLength}
-                    decreaseBreak={this.onDecreaseBreakLength}
-                    isPlay={this.state.isPlay}
-                />
-                <SessionLength
-                    sessionLength={this.state.sessionLength}
-                    increaseSession={this.onIncreaseSessionLength}
-                    decreaseSession={this.onDecreaseSessionLength}
-                    isPlay={this.state.isPlay}
-                />
-                <Timer
-                    timerMinute={this.state.timerMinute}
-                    breakLength={this.state.breakLength}
-                    updateTimerMinute={this.onUpdateTimerMinute}
-                    toggleInterval={this.onToggleInterval}
-                    resetTimer={this.onResetTimer}
-                    handlePlayStopTimer={this.onPlayStopTimer}
-                />
+            <main
+                className={
+                    "d-flex flex-column justify-content-center align-items-center h-100"
+                }>
+                <h1 className={"mb-5"}>{"Pomodoro"}</h1>
+                <div className={"d-flex flex-column w-100"}>
+                    <Timer
+                        timerMinute={this.state.timerMinute}
+                        breakLength={this.state.breakLength}
+                        updateTimerMinute={this.onUpdateTimerMinute}
+                        toggleInterval={this.onToggleInterval}
+                        resetTimer={this.onResetTimer}
+                        handlePlayStopTimer={this.onPlayStopTimer}
+                        isPlay={this.state.isPlay}
+                    />
+                    <div className={"d-flex flex-row justify-content-around"}>
+                        <SessionLength
+                            sessionLength={this.state.sessionLength}
+                            increaseSession={this.onIncreaseSessionLength}
+                            decreaseSession={this.onDecreaseSessionLength}
+                            isPlay={this.state.isPlay}
+                        />
+                        <BreakInterval
+                            breakInterval={this.state.breakLength}
+                            increaseBreak={this.onIncreaseBreakLength}
+                            decreaseBreak={this.onDecreaseBreakLength}
+                            isPlay={this.state.isPlay}
+                        />
+                    </div>
+                </div>
             </main>
         );
     }
