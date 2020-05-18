@@ -48,7 +48,6 @@
     }
   },
   "dependencies": {
-    "netlify-cli": "^2.51.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }
