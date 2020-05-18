@@ -2,6 +2,7 @@
   "name": "react-pomodoro",
   "version": "1.0.0",
   "description": "- Type of challenge: **learning** - Repository : **`react-pomodoro`** - Deadline : **18/05/2020 9:00 pm** - Team : **solo**",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
